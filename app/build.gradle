@@ -1,6 +1,44 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'ly.img.android.sdk'
+}
+
+imglyConfig {
+
+    pesdk {
+        enabled true
+        licensePath null
+    }
+
+    // Define the modules you are need
+    modules {
+        // Add all the UI modules you are need
+        include 'ui:core'
+        include 'ui:text'
+        include 'ui:focus'
+        include 'ui:frame'
+        include 'ui:brush'
+        include 'ui:filter'
+        include 'ui:camera'
+        include 'ui:sticker'
+        include 'ui:overlay'
+        include 'ui:transform'
+        include 'ui:adjustment'
+        include 'ui:text-design'
+
+
+        // Add the serializer if you need
+        include 'backend:serializer'
+
+        // Add asset packs if you need
+        include 'assets:font-basic'
+        include 'assets:frame-basic'
+        include 'assets:filter-basic'
+        include 'assets:overlay-basic'
+        include 'assets:sticker-shapes'
+        include 'assets:sticker-emoticons'
+    }
 }
 
 android {
@@ -8,7 +46,7 @@ android {
 
     defaultConfig {
         applicationId "com.imgly.test"
-        minSdk 16
+        minSdk 21
         targetSdk 31
         versionCode 1
         versionName "1.0"
