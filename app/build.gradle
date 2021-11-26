@@ -20,6 +20,9 @@ imglyConfig {
     modules {
         // Add all the UI modules you are need
         include 'ui:video-trim'
+        include 'ui:video-library'
+        include 'ui:video-composition'
+        include 'ui:audio-composition'
         include 'ui:core'
         include 'ui:text'
         include 'ui:focus'
