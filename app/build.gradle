@@ -75,6 +75,13 @@ android {
     }
 }
 
+if (hasProperty('buildScan')) {
+    buildScan {
+        termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+        termsOfServiceAgree = 'yes'
+    }
+}
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
