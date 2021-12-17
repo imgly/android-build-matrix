@@ -8,7 +8,7 @@ imglyConfig {
 
     pesdk {
         enabled true
-        licensePath null
+        licensePath = "pesdk_android_license"
     }
 
     vesdk {

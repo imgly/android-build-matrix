@@ -7,7 +7,7 @@ android {
     compileSdkVersion 31
 
     defaultConfig {
-        applicationId "com.imgly.test"
+        applicationId "com.photoeditorsdk.android.app"
         minSdkVersion 21
         targetSdkVersion 31
         versionCode 1
