@@ -11,18 +11,18 @@ jobs:
       matrix:
         gradle: [6.9, 7.2]
         java: [ 1.8, 11 ]
-        agp: [ 3.6.4, 4.0.2, 4.1.3, 4.2.2, 7.0.2, 7.1.0-beta03 ]
+        agp: [ 3.6.4, 4.0.2, 4.1.3, 4.2.2, 7.0.2, 7.1.0-rc01 ]
         kotlin: [1.5.31, 1.6.0]
         exclude:
           # AGP 7.0.0+ requires JDK 11
           - agp: 7.0.2
             java: 1.8
-          - agp: 7.1.0-beta03
+          - agp: 7.1.0-rc01
             java: 1.8
           # AGP 7.0.0+ requires Gradle 7.0.2+
           - agp: 7.0.2
             gradle: 6.9
-          - agp: 7.1.0-beta03
+          - agp: 7.1.0-rc01
             gradle: 6.9
           # AGP below 4.1 is incompatible with Gradle 7.0.0
           - agp: 3.6.4
