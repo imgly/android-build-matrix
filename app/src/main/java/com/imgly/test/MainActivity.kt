@@ -3,14 +3,12 @@ package com.imgly.test
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import ly.img.android.SourceType
 import ly.img.android.pesdk.PhotoEditorSettingsList
@@ -83,7 +81,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createPESDKSettingsList() =
-        PhotoEditorSettingsList()
+        PhotoEditorSettingsList(false)
             .configure<UiConfigFilter> {
                 it.setFilterList(FilterPackBasic.getFilterPack())
             }
@@ -106,9 +104,8 @@ class MainActivity : AppCompatActivity() {
                 it.setOutputToGallery(Environment.DIRECTORY_DCIM)
             }
 
-    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     private fun createVesdkSettingsList() =
-        VideoEditorSettingsList()
+        VideoEditorSettingsList(false)
             .configure<UiConfigFilter> {
                 it.setFilterList(FilterPackBasic.getFilterPack())
             }
@@ -143,6 +140,8 @@ class MainActivity : AppCompatActivity() {
             PhotoEditorBuilder(this)
                 .setSettingsList(settingsList)
                 .startActivityForResult(this, PESDK_RESULT)
+
+            settingsList.release()
         } else {
             val settingsList = createVesdkSettingsList()
 
@@ -153,6 +152,8 @@ class MainActivity : AppCompatActivity() {
             VideoEditorBuilder(this)
                 .setSettingsList(settingsList)
                 .startActivityForResult(this, VESDK_RESULT)
+
+            settingsList.release()
         }
     }
 
