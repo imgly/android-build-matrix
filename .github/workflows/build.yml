@@ -41,7 +41,7 @@ jobs:
         uses: eskatos/gradle-command-action@v1
         with:
           gradle-version: ${{ matrix.gradle }}
-          arguments: :app:assembleDebug -PagpVersion=${{ matrix.agp }} -PkotlinVersion=${{ matrix.kotlin }} --scan
+          arguments: :dynamicfeature:assembleDebug :app:assembleDebug -PagpVersion=${{ matrix.agp }} -PkotlinVersion=${{ matrix.kotlin }} --scan
       - name: Upload APK
         uses: actions/upload-artifact@v2
         with:
