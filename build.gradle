@@ -12,7 +12,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$agpVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath 'ly.img.android.pesdk:plugin:10.0.0'
+        classpath 'ly.img.android.pesdk:plugin:10.0.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
