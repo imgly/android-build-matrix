@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'ly.img.android.sdk'
+    id 'io.gitlab.arturbosch.detekt'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 imglyConfig {
