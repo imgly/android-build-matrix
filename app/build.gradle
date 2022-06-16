@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
     id 'ly.img.android.sdk'
+    id 'kotlin-android'
 }
 
 imglyConfig {
