@@ -51,12 +51,13 @@ imglyConfig {
 }
 
 android {
-    compileSdkVersion 32
+    namespace "com.imgly.test"
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.imgly.test"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
