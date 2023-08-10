@@ -76,6 +76,17 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    sourceSets {
+        main {
+            java.srcDir("build/generated/source/imgly/main")
+            kotlin.srcDir("build/generated/source/imgly/main")
+        }
+        debug {
+            java.srcDir("build/generated/source/imgly/debug")
+            kotlin.srcDir("build/generated/source/imgly/debug")
+        }
+    }
 }
 
 if (hasProperty('buildScan')) {
