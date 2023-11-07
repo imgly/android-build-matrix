@@ -8,11 +8,12 @@ buildscript {
         google()
         mavenCentral()
         maven { url 'https://artifactory.img.ly/artifactory/imgly' }
+        maven { url 'https://artifactory.img.ly/artifactory/imgly_development' }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$agpVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath 'ly.img.android.pesdk:plugin:10.7.1'
+        classpath 'ly.img.android.pesdk:plugin:10.8.0-RC.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
