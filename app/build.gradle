@@ -51,7 +51,7 @@ imglyConfig {
 }
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     namespace "com.imgly.test"
 
     defaultConfig {
