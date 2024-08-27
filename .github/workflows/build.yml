@@ -9,9 +9,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        gradle: [8.4, 8.5.2, 8.7]
+        gradle: [8.4, 8.7]
         java: [11, 17]
-        agp: [ 8.1.2, 8.7]
+        agp: [ 8.1.2, 8.5.2]
         kotlin: [1.9.0, 1.9.10, 1.9.20, 1.9.21, 1.9.22, 1.9.23]
         exclude:
           # AGP 8.0+ requires Gradle 8.0
