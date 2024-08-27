@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'ly.img.android.sdk'
+    id 'com.google.devtools.ksp'
 }
 
 imglyConfig {
@@ -51,7 +52,7 @@ imglyConfig {
 }
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 35
     namespace "com.imgly.test"
 
     defaultConfig {
