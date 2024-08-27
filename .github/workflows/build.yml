@@ -46,7 +46,9 @@ jobs:
         uses: eskatos/gradle-command-action@v1
         with:
           gradle-version: ${{ matrix.gradle }}
-         arguments: assembleDebug -PagpVersion=${{ matrix.agp }} -PkotlinVersion=${{ matrix.kotlin }} -PkspVersion=${{ steps.ksp-version.outputs.KSP_VERSION }} --scan      - name: Upload APK
+         arguments: assembleDebug -PagpVersion=${{ matrix.agp }} -PkotlinVersion=${{ matrix.kotlin }} -PkspVersion=${{ steps.ksp-version.outputs.KSP_VERSION }} --scan
+      - name: Upload APK
         uses: actions/upload-artifact@v2
         with:
-          name: apk-${{ matrix.gradle }}-${{ matrix.java }}-${{ matrix.agp }}-${{ matrix.kotlin }}-${{ steps.ksp-version.outputs.KSP_VERSION }}          path: app/build/outputs/apk/debug/app-debug.apk
+          name: apk-${{ matrix.gradle }}-${{ matrix.java }}-${{ matrix.agp }}-${{ matrix.kotlin }}-${{ steps.ksp-version.outputs.KSP_VERSION }}
+          path: app/build/outputs/apk/debug/app-debug.apk
