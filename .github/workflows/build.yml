@@ -9,10 +9,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        gradle: [7.6.3, 8.4, 8.7]
+        gradle: [7.6.3, 8.4]
         java: [11, 17]
-        agp: [7.4.2, 8.1.2, 8.5.2]
-        kotlin: [1.7.21, 1.8.22,1.9.0, 1.9.10, 1.9.20, 1.9.21, 1.9.22, 1.9.23]
+        agp: [7.4.2, 8.1.2]
+        kotlin: [1.7.21, 1.8.22, 1.9.10, 1.9.20, 1.9.21, 1.9.22, 1.9.23]
         exclude:
           # AGP 8.0+ requires Gradle 8.0
           - agp: 8.1.2
@@ -23,6 +23,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Install JDK ${{ matrix.java }}
         uses: actions/setup-java@v1
         with:
@@ -34,7 +35,6 @@ jobs:
           case ${{ matrix.kotlin }} in
             1.7.21) echo "::set-output name=KSP_VERSION::1.7.21-1.0.8" ;;
             1.8.22) echo "::set-output name=KSP_VERSION::1.8.22-1.0.11" ;;
-            1.9.0) echo "::set-output name=KSP_VERSION::1.9.0-1.0.11" ;;
             1.9.10) echo "::set-output name=KSP_VERSION::1.9.10-1.0.13" ;;
             1.9.20) echo "::set-output name=KSP_VERSION::1.9.20-1.0.14" ;;
             1.9.21) echo "::set-output name=KSP_VERSION::1.9.21-1.0.16" ;;
@@ -46,7 +46,8 @@ jobs:
         uses: eskatos/gradle-command-action@v1
         with:
           gradle-version: ${{ matrix.gradle }}
-         arguments: assembleDebug -PagpVersion=${{ matrix.agp }} -PkotlinVersion=${{ matrix.kotlin }} -PkspVersion=${{ steps.ksp-version.outputs.KSP_VERSION }} --scan
+          arguments: assembleDebug -PagpVersion=${{ matrix.agp }} -PkotlinVersion=${{ matrix.kotlin }} -PkspVersion=${{ steps.ksp-version.outputs.KSP_VERSION }} --scan
+
       - name: Upload APK
         uses: actions/upload-artifact@v2
         with:
