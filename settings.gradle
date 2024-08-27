@@ -4,7 +4,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url 'https://artifactory.img.ly/artifactory/imgly' }
-         maven { url 'https://artifactory.img.ly/artifactory/imgly_development' }
+        maven { url 'https://artifactory.img.ly/artifactory/imgly_development' }
     
     }
 }
