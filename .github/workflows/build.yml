@@ -9,10 +9,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        gradle: [7.6.3, 8.0, 8.4 ]
+        gradle: [7.6.3, 8.4, 8.6 ]
         java: [11, 17]
-        agp: [7.4.2, 8.1.2 ]
-        kotlin: [1.7.21,1.8.10, 1.8.22, 1.9.0, 1.9.10, 1.9.20, 1.9.21, 1.9.22, 1.9.23]
+        agp: [7.4.2, 8.4.0 ]
+        kotlin: [1.7.21, 1.8.10, 1.8.22, 1.9.0, 1.9.10, 1.9.20, 1.9.21, 1.9.22, 1.9.23]
         exclude:
           # AGP 8.0+ requires Gradle 8.0
           - agp: 8.1.2
@@ -34,6 +34,7 @@ jobs:
         run: |
           case ${{ matrix.kotlin }} in
             1.7.21) echo "::set-output name=KSP_VERSION::1.7.21-1.0.8" ;;
+            1.8.10) echo "::set-output name=KSP_VERSION::1.8.10-1.0.9" ;;
             1.8.22) echo "::set-output name=KSP_VERSION::1.8.22-1.0.11" ;;
             1.9.10) echo "::set-output name=KSP_VERSION::1.9.10-1.0.13" ;;
             1.9.20) echo "::set-output name=KSP_VERSION::1.9.20-1.0.14" ;;
