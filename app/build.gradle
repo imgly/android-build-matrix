@@ -5,6 +5,10 @@ plugins {
     id 'com.google.devtools.ksp'
 }
 
+kotlin {
+    jvmToolchain(8)
+}
+
 imglyConfig {
 
     pesdk {
